@@ -1,0 +1,31 @@
+<div class="form-page">
+  <form [formGroup]="registerForm" (ngSubmit)="handleAccount()">
+    <fieldset>
+      <label for="email">Correo</label>
+      <input id="email" type="text" formControlName="email" />
+      @if(isBlank){
+        <p class="field-error">Se requiere el nombre</p>
+      }
+     
+    </fieldset>
+
+    <fieldset>
+      <label for="password">Contraseña</label>
+      <input id="password" type="password" formControlName="password" />
+      @if (isBlank) {
+        <p class="field-error">Se requiere la contraseña</p>
+      }
+    
+    </fieldset>
+
+    <fieldset>
+      <label for="repeat-password">Repita la contraseña</label>
+      <input id="repeat-password" type="password" formControlName="repeatPassword" />
+      @if (!isRepeat) {
+        <p class="field-error" >Las contraseñas no coinciden</p>
+      }
+    </fieldset>
+
+    <button type="submit">Crear cuenta</button>
+  </form>
+</div>
