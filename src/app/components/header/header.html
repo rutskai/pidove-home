@@ -8,6 +8,12 @@
     <a routerLink="/info" class="nav-link">Información</a><i class="bi bi-caret-down-fill"></i>
     </div>
 
+    @if(!currentUser){
     <button routerLink="/register" class="btn btn-outline-dark">Registrarse</button>
+    <button routerLink="/login" class="btn btn-outline-dark">Iniciar sesión</button>
+    }@else {
+      <button routerLink="/user" class="btn btn-dark btn-lg " style="color: white; margin-left: 200px;">{{currentUser.nickname}}</button>
+    }
+    
   </div>
 
