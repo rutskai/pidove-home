@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row g-5">
+  <div class="row g-4">
     @for (pigeon of pigeons; track $index) {
       <div class="col-auto">
         <div class="card">
@@ -7,10 +7,10 @@
           <div class="card-body">
             <h5 class="card-title">{{ pigeon.name }}</h5>
             <p class="card-text">{{ pigeon.description }}</p>
-            <span class="badge bg-success">{{ pigeon.label }}</span>
+            <span class="badge {{pigeon.style}}">{{ pigeon.label }}</span>
           </div>
           <div class="card-footer">
-            <button class="btn btn-primary w-100">Adoptar</button>
+            <button (click)="deletePigeon(pigeon.id)" class="btn btn-primary w-100">Adoptar</button>
           </div>
         </div>
       </div>

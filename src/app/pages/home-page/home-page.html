@@ -1,2 +1,50 @@
 <app-header></app-header>
-<app-pigeon-cards></app-pigeon-cards>
+
+ <div class="welcome-section mb-5">
+            <h2>Bienvenido de vuelta</h2>
+            <p>Aquí puedes ver toda la información sobre nuestras palomas y el progreso de las adopciones.</p>
+</div>
+
+<div class="cards-grid">
+            
+            <!-- Palomas Disponibles -->
+            <div class="stat-card card-blue">
+                <div class="card-icon">
+                    <span class="icon-emoji">🕊️</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-label">Palomas Disponibles</h3>
+                    <div class="card-value">{{pigeonAvailable}}</div>
+                    <p class="card-description">Esperando su hogar perfecto</p>
+                    <div class="card-bar">
+                        <div class="bar-fill" style="width: 75%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adopciones Exitosas -->
+            <div class="stat-card card-green">
+                <div class="card-icon">
+                    <span class="icon-emoji">✅</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-label">Adopciones Exitosas</h3>
+                    <div class="card-value">{{pigeonAdopted}}</div>
+                    <p class="card-description">Palomas que encontraron hogar</p>
+                    <div class="card-bar">
+                        <div class="bar-fill" style="width: 94%;"></div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Sección de Acción -->
+        <div class="action-section mt-5">
+            <div class="action-card">
+                <h3>¿Listo para adoptar?</h3>
+                <p>Explora nuestro catálogo completo de palomas disponibles y encuentra tu compañera perfecta hoy mismo.</p>
+                <button routerLink="/adopt" class="btn-action">Ver Palomas</button>
+            </div>
+        </div>
+
+    </div>
+

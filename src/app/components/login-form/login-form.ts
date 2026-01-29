@@ -15,6 +15,15 @@ export class LoginForm {
   loginForm: FormGroup;
   loginError: boolean;
 
+  /**
+   * Constructor del componente
+   * Inicializa el formulario de login y la variable loginError 
+   * Contiene validaciones requeridas y de email con Validators
+   * 
+   * @param {User} userService - Servicio para gestionar usuarios y validar datos
+   * @param {Router} router - Servicio para navegar entre rutas
+   */
+
   constructor(private userService: User, private router: Router) {
     this.loginError=false;
     this.loginForm = new FormGroup({
@@ -24,6 +33,19 @@ export class LoginForm {
 
   }
 
+    /**
+   * Maneja el proceso de inicio de sesión
+   * Valida los datos del formylario y redirige al home si el login es exitoso
+   * 
+   * 1- Valida que el formulario sea válido (campos requeridos y email correcto)
+   * 2- Comprueba si hay usuarios registrados en el sistema
+   * 3- Valida los datos (email y password) en el servidor
+   * 4- Si es correcto: redirige a /home, limpia el formulario y desactiva el error
+   * 5- Si es incorrecto: variable loginError a true y muestra mensaje de error
+   * 
+   * @returns {void}
+   * 
+   */
   handleLogin() {
 
       if (this.loginForm.invalid) { 
