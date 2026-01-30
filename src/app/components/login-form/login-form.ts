@@ -62,7 +62,7 @@ export class LoginForm {
 
     if (this.userService.validateLogin(email, password)) {
        this.loginError = false;
-       this.router.navigate(['/home']);
+       this.router.navigate(['/']);
        this.loginForm.reset();
       console.log('Login correcto');
     } else {
