@@ -17,7 +17,7 @@
   box-shadow: 0 2px 10px rgba(0,0,0,.06);
 }
 
-/* Campos */
+
 .form-page label{
   display: block;
   margin: 10px 0 6px;
@@ -34,7 +34,7 @@
   box-sizing: border-box;
 }
 
-/* Botón */
+
 .form-page button{
   margin-top: 14px;
   width: 100%;
@@ -48,5 +48,4 @@
 
 .form-page button:disabled{
   opacity: .6;
-  cursor: not-allowed;
 }

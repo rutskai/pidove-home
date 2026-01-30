@@ -1,22 +1,36 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class User {
-   accounts: { email: string; nickname:string; password: string }[] = [];
-   currentUser:{email:string, nickname:string} | null = null;
+  accounts: { email: string; nickname: string; password: string }[] = [];
+  currentUser: { email: string, nickname: string } | null;
 
-   /**
-   * Crea una nueva cuenta de usuario y la añade al array de cuentas
-   * 
-   * @param {string} email - Correo electrónico del nuevo usuario
-   * @param {string} nickname - Nombre de usuario del nuevo usuario
-   * @param {string} password - Contraseña del nuevo usuario
-   * @returns {void}
-   * 
-   */
-   addAccount(email: string, nickname:string, password: string) {
+  /**
+ * Constructor del componente
+ * Inicializa la variable currentUser como null indicando que
+ * no hay ningún usuario logueado al empezar
+ * 
+ * @param {Router} router - Servicio para navegar entre las páginas
+ */
+
+  constructor(private router: Router) {
+    this.currentUser = null;
+
+  }
+
+  /**
+  * Crea una nueva cuenta de usuario y la añade al array de cuentas
+  * 
+  * @param {string} email - Correo electrónico del nuevo usuario
+  * @param {string} nickname - Nombre de usuario del nuevo usuario
+  * @param {string} password - Contraseña del nuevo usuario
+  * @returns {void}
+  * 
+  */
+  addAccount(email: string, nickname: string, password: string) {
     this.accounts.push({ email, nickname, password });
   }
 
@@ -31,21 +45,21 @@ export class User {
     return this.accounts;
   }
 
-    /**
-   * Valida los datos de un usuario intentando iniciar sesión
-   * Busca un usuario con el email y contraseña especificados
-   * Si encuentra coincidencia, establece el usuario actual como validado
-   * 
-   * @param {string} email - Correo electrónico del usuario a autenticar
-   * @param {string} password - Contraseña del usuario a autenticar
-   * @returns {boolean} true si el login es exitoso, false si falla
-   * 
-   */
+  /**
+ * Valida los datos de un usuario intentando iniciar sesión
+ * Busca un usuario con el email y contraseña especificados
+ * Si encuentra coincidencia, establece el usuario actual como validado
+ * 
+ * @param {string} email - Correo electrónico del usuario a autenticar
+ * @param {string} password - Contraseña del usuario a autenticar
+ * @returns {boolean} true si el login es exitoso, false si falla
+ * 
+ */
 
   validateLogin(email: string, password: string): boolean {
-    const user=this.accounts.find(acc => acc.email === email && acc.password === password);
-    if(user){
-      this.currentUser= {email:user.email, nickname: user.nickname};
+    const user = this.accounts.find(acc => acc.email === email && acc.password === password);
+    if (user) {
+      this.currentUser = { email: user.email, nickname: user.nickname };
       return true;
     }
     return false;
@@ -60,8 +74,22 @@ export class User {
    *                        o null si no hay sesión activa
    */
 
-  getCurrentUser(){
+  getCurrentUser(): {email: string, nickname: string} | null {
     return this.currentUser;
   }
-  
+
+  /**
+  * Cierra la sesión del usuario actual
+  * Establece el usuario actual como null, finalizando la sesión activa
+  * Redirige a la página home con el servicio router
+  * 
+  * @returns {void}
+  */
+
+  logout(): void {
+    this.currentUser = null;
+    this.router.navigate(['/']);
+
+  }
+
 }

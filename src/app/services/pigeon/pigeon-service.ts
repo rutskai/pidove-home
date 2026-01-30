@@ -27,7 +27,7 @@ export class PigeonService {
    * @returns {Array<Pigeon>} Array con todas las palomas disponibles
    * 
    */
-  getPigeons(){
+  getPigeons(): Array<Pigeon>{
     return this.pigeons;
   }
 
@@ -39,7 +39,7 @@ export class PigeonService {
    * @returns {void}
    */
 
-  removePigeon(id:number){
+  removePigeon(id:number): void{
    this.pigeons=[...this.pigeons.filter(p=> p.id!==id)];
    console.log("Pigeon n" + id + " eliminada.");
    this.pigeonAdopted=this.pigeonAdopted+1;

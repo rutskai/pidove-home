@@ -30,7 +30,7 @@ export class PigeonCards {
    * @returns {void}
    */
 
-  deletePigeon(id:number){
+  deletePigeon(id:number):void{
     this.pigeonService.removePigeon(id);
     this.pigeons = this.pigeonService.getPigeons();
   }

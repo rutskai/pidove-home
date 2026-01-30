@@ -46,7 +46,7 @@ export class LoginForm {
    * @returns {void}
    * 
    */
-  handleLogin() {
+  handleLogin():void {
 
       if (this.loginForm.invalid) { 
       return;
