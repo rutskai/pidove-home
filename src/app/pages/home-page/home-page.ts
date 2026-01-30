@@ -12,6 +12,15 @@ import { RouterLink } from "@angular/router";
 export class HomePage {
   pigeonAdopted:number;
   pigeonAvailable:number;
+
+  /**
+   * Constructor del componente HomePage
+   * 
+   * Inicializa las propiedades pigeonAdopted y pigeonAvailable
+   * obteniendo los datos del servicio de palomas (adoptadas y disponibles).
+   * 
+   * @param pigeonService - Servicio que gestiona los datos de las palomas
+   */
   constructor(private pigeonService: PigeonService){
     this.pigeonAdopted=this.pigeonService.pigeonAdopted;
     this.pigeonAvailable=this.pigeonService.getPigeons().length;
