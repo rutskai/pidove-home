@@ -88,6 +88,7 @@ export class User {
 
   logout(): void {
     this.currentUser = null;
+    console.log("Logout correcto");
     this.router.navigate(['/']);
 
   }

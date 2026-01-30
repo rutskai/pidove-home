@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators, ValidationErrors } from '@angular/forms';
-import { User } from '../../services/user';
+import { User } from '../../services/user/user';
 import { Router } from '@angular/router';
 
 @Component({
