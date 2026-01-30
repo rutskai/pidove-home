@@ -167,10 +167,16 @@ cursor: pointer;
     padding: 3.5rem 3rem;
     border-radius: 20px;
     text-align: center;
+    transition: all 0.3s ease;
     width: 320px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
     position: relative;
     overflow: hidden;
+}
+
+.action-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 

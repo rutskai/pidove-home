@@ -21,6 +21,10 @@
     height: 100px;
 }
 
+.header h1:hover{
+ cursor: pointer;
+}
+
 .header h1 {
     margin-left: 40px;
     margin: 0 10px 0 10px;
