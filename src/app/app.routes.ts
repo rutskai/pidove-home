@@ -8,7 +8,6 @@ import { UserPage } from './pages/user-page/user-page';
 
 export const routes: Routes = [
     {path: '', component: HomePage},
-    {path: 'home', component:HomePage},
     {path: 'adopt', component:AdoptPage},
     {path: 'info', component:InfoPage},
     {path: 'register', component:RegisterPage},
