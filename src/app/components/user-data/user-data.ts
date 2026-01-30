@@ -11,7 +11,7 @@ export class UserData {
   currentUser: { email: string, nickname:string } | null = null;
 
    /**
-   * Constructor del componente.
+   * Constructor del componente UserData.
    * 
    * @param userService Servicio que gestiona la autenticación y los datos del usuario.
    * Se utiliza para obtener el usuario actual y realizar logout.

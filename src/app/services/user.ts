@@ -41,7 +41,7 @@ export class User {
    *
    */
 
-  getAccounts() {
+  getAccounts(): Array<{email: string; nickname: string; password: string}> {
     return this.accounts;
   }
 

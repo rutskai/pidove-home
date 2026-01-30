@@ -11,7 +11,7 @@ export class PigeonCards {
    pigeons: Pigeon[];
 
   /**
-   * Constructor del componente
+   * Constructor del componente PigeonCards
    * Utiliza el servicio PigeonService y carga las palomas disponibles
    * 
    * @param {PigeonService} pigeonService - Servicio para gestionar palomas
